@@ -1,0 +1,21 @@
+{% extends "layout.html" %} 
+{% block title %} Tweet Form{% endblock %}
+
+
+{% block content %}
+
+<h2>
+    {% if form.instane.pk %}
+        Edit Tweet
+    {% else %}
+        Create tweet
+    {% endif %}
+</h2>
+
+<form method="post"  enctype="multipart/form-data"  class="form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-warning" type="submit">submit</button>
+</form>
+<a href="{% url "tweet_list" %}">Back to tweetlist</a>
+{% endblock %}
