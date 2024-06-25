@@ -15,7 +15,8 @@
         <div class="card-body">
           <h5 class="card-title">{{tweet.user.username}}</h5>
           <p class="card-text">{{tweet.text}}</p>
-          {% if tweet.user == user %}          <a href="{% url "tweet_edit" tweet.id %}" class="btn btn-primary">Edit</a>
+          {% if tweet.user == user %}        
+            <a href="{% url "tweet_edit" tweet.id %}" class="btn btn-primary">Edit</a>
           <a class="btn btn-danger" href="{% url "tweet_delete" tweet.id %}">Delete</a>
           {% endif %}
 
